@@ -1,0 +1,384 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<style>
+    body{
+font-family: sans-serif;
+font-size:14px;
+}
+input[type='range'] {
+  width: 210px;
+  height: 30px;
+  overflow: hidden;
+  cursor: pointer;
+    outline: none;
+}
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+    background: none;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  width: 200px;
+  height: 1px;
+  background: green;
+}
+
+input[type='range']:nth-child(2)::-webkit-slider-runnable-track{
+  background: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  position: relative;
+  height: 15px;
+  width: 15px;
+  margin-top: -7px;
+  background: green;
+  border: 1px solid #003D7C;
+  border-radius: 25px;
+  z-index: 1;
+}
+
+
+input[type='range']:nth-child(1)::-webkit-slider-thumb{
+  z-index: 2;
+}
+
+.rangeslider{
+    position: relative;
+    height: 60px;
+    width: 210px;
+    display: inline-block;
+    margin-top: -5px;
+    margin-left: 20px;
+}
+.rangeslider input{
+    position: absolute;
+}
+.rangeslider{
+    position: absolute;
+}
+
+.rangeslider span{
+    position: absolute;
+    margin-top: 30px;
+    left: 0;
+}
+
+.rangeslider .right{
+   position: relative;
+   float: right;
+   margin-right: -5px;
+}
+
+
+/* Proof of concept for Firefox */
+@-moz-document url-prefix() {
+  .rangeslider::before{
+    content:'';
+    width:100%;
+    height:2px;
+    background: #003D7C;
+    display:block;
+    position: relative;
+    top:16px;
+  }
+
+  input[type='range']:nth-child(1){
+    position:absolute;
+    top:35px !important;
+    overflow:visible !important;
+    height:0;
+  }
+
+  input[type='range']:nth-child(2){
+    position:absolute;
+    top:35px !important;
+    overflow:visible !important;
+    height:0;
+  }
+input[type='range']::-moz-range-thumb {
+  position: relative;
+  height: 15px;
+  width: 15px;
+  margin-top: -7px;
+  background: #fff;
+  border: 1px solid #003D7C;
+  border-radius: 25px;
+  z-index: 1;
+}
+
+  input[type='range']:nth-child(1)::-moz-range-thumb {
+      transform: translateY(-20px);
+  }
+  input[type='range']:nth-child(2)::-moz-range-thumb {
+      transform: translateY(-20px);
+  }
+}
+</style>
+
+
+
+
+<div>s</div>
+
+<div class="container-fluid pt-5">
+        <div class="row px-xl-5">
+            <!-- Shop Sidebar Start -->
+            <div class="col-lg-3 col-md-12">
+                <!-- Price Start -->
+                <div class="border-bottom mb-4 pb-4">
+                    <h5 class="font-weight-semi-bold mb-4">Filter by price</h5>
+
+                        <form action="{% url 'You_May_Also_Like' %}" method="GET">
+                            <div class="rangeslider">
+                                <input class="min" name="range_1" type="range" min="10" max="10000" value="{% if range_1 %}{{range_1}}{% else %}10{% endif %}" id="min_value" onchange="k()"/>
+                                <input class="max" name="range_2" type="range" min="10" max="10000" value="{% if range_2 %}{{range_2}}{% else %}10000{% endif %}"  id="miax_value" onchange="k()" />
+                                <span class="range_min light left">{% if range_1 %}{{range_1}}${% else %}10${% endif %}</span>
+                                <span class="range_max light right">{% if range_2 %}{{range_2}}${% else %}10000${% endif %}</span>
+
+
+                            </div>
+    <button type="submit" id="buttooo" style="display:none;">click</button>
+
+    </form>
+                </div>
+                <!-- Price End -->
+
+                <div class="border-bottom mb-4 pb-4">
+                    <h5 class="font-weight-semi-bold mb-4"> <span style="background-color: whitesmoke;padding: 8px;color: green;font-size: 15px;">{% if range_1 %}({{range_1}} $ TO
+                                {% endif %}
+                                {% if range_2 %}
+                                {{range_2}} $ Result Showing)
+                                {% endif %}</span></h5>
+
+                </div>
+
+            </div>
+            <!-- Shop Sidebar End -->
+
+
+            <!-- Shop Product Start -->
+            <div class="col-lg-9 col-md-12">
+                <div class="row pb-3">
+                    {% if Trandy_Products_product_here %}
+{% for i in Trandy_Products_product_here %}
+                    <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
+                        <div class="card product-item border-0 mb-4">
+                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                <img class="img-fluid w-100" style="height:220px; width:auto;" src="{{i.Product_Picture_upload_1.url}}" alt="">
+                            </div>
+                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                <h6 class="text-truncate mb-3">{{i.Product_Title}}</h6>
+                                <div class="d-flex justify-content-center">
+                                    {% if i.Product_Discount_Prize  %}
+                                        <h6>$
+                                            {{i.Product_Discount_Prize}}
+                                        </h6>
+
+                                        <h6 class="text-muted ml-2">
+                                            <del>
+                                                {% if i.Product_Sell_Prize  %}
+                                                {{i.Product_Sell_Prize}}
+                                                {% endif %}
+                                            </del>
+                                        </h6>
+                                    {% else %}
+                                        <h6 class="text-muted ml-2">
+                                            {% if i.Product_Sell_Prize  %}
+                                            {{i.Product_Sell_Prize}}
+                                            {% endif %}
+                                        </h6>
+
+                                    {% endif %}
+                                </div>
+                                 {% if i.Product_Size_Get %}
+                                    <div class="d-flex justify-content-center">Size: {{i.Product_Size_Get}}</div>
+                                 {% endif %}
+                            </div>
+                            <div class="card-footer d-flex justify-content-between bg-light border">
+                                <a href="{% url 'details' i.id %}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                <a onclick="fun('{{i.id}}','{{i.Product_Picture_upload_1.url}}','{{i.Product_Title}}','{{i.Product_Discount_Prize}}')" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+{% endfor %}
+                    {% else %}
+                    <div style="text-align: center;  width: 100%; margin-bottom: 87px; margin-top: 31px; background-color: thistle;">
+                    <span style="font-size: 20px; color: green;  background-color: whitesmoke; padding: 22px;">No Product Available Now</span>
+                    </div>
+                        {% endif %}
+
+                    <div class="col-12 pb-1">
+                        <nav aria-label="Page navigation">
+                          <ul class="pagination justify-content-center mb-3">
+                            {% if list %}
+                            <li class="page-item disabled">
+                             {% if Trandy_Products_product_here.has_previous %}
+                              <a class="page-link" href="{% url 'You_May_Also_Like' %}?page={{Trandy_Products_product_here.previous_page_number}}&range_1={{range_1}}&range_2={{range_2}}" aria-label="Previous">
+                                <span aria-hidden="true">«</span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                                {% endif %}
+                            </li>
+                            {% for i in list %}
+                            <li class="page-item active"><a class="page-link" href="{% url 'You_May_Also_Like' %}?page={{i}}&range_1={{range_1}}&range_2={{range_2}}">{{i}}</a></li>
+                            {% endfor %}
+
+                            <li class="page-item">
+                                {% if Trandy_Products_product_here.has_next %}
+                              <a class="page-link" href="{% url 'You_May_Also_Like' %}?page={{Trandy_Products_product_here.next_page_number}}&range_1={{range_1}}&range_2={{range_2}}" aria-label="Next">
+                                <span aria-hidden="true">»</span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                                {% endif %}
+                            </li>
+                            {% endif %}
+                          </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- Shop Product End -->
+        </div>
+    </div>
+
+
+
+
+
+<script>
+
+    (function() {
+
+        function addSeparator(nStr) {
+            nStr += '';
+            var x = nStr.split('.');
+            var x1 = x[0];
+            var x2 = x.length > 1 ? '.' + x[1] : '';
+            var rgx = /(\d+)(\d{3})/;
+            while (rgx.test(x1)) {
+                x1 = x1.replace(rgx, '$1' + '.' + '$2');
+            }
+            return x1 + x2;
+        }
+
+        function rangeInputChangeEventHandler(e){
+            var rangeGroup = $(this).attr('name'),
+                minBtn = $(this).parent().children('.min'),
+                maxBtn = $(this).parent().children('.max'),
+                range_min = $(this).parent().children('.range_min'),
+                range_max = $(this).parent().children('.range_max'),
+                minVal = parseInt($(minBtn).val()),
+                maxVal = parseInt($(maxBtn).val()),
+                origin = $(this).context.className;
+
+            if(origin === 'min' && minVal > maxVal-5){
+                $(minBtn).val(maxVal-5);
+            }
+            var minVal = parseInt($(minBtn).val());
+            $(range_min).html(addSeparator(minVal) + ' $');
+
+
+            if(origin === 'max' && maxVal-5 < minVal){
+                $(maxBtn).val(5+ minVal);
+            }
+            var maxVal = parseInt($(maxBtn).val());
+            $(range_max).html(addSeparator(maxVal) + ' $');
+        }
+
+     $('input[type="range"]').on( 'input', rangeInputChangeEventHandler);
+})();
+
+</script>
+
+<script>
+    function k(){
+
+
+    document.getElementById("buttooo").click()
+    }
+
+</script>
+
+
+
+<script>
+
+
+function fun(idd, imgg, titlee,  prisee){
+valuee = 'No Color'
+    if (product_cart[idd + valuee] != undefined){
+            console.log('old');
+            console.log(product_cart[idd + valuee][0]);
+            var t = product_cart[idd + valuee][0];
+            product_cart[idd + valuee][0] = t+1;
+            update_my_cart(product_cart)
+        }
+
+    else{
+        qty = 1;
+        name = titlee;
+        price = prisee;
+
+
+        product_cart[idd + valuee] = [qty, name, parseInt(price), imgg, idd, 'No Color'];
+        console.log('product_cart[idd + valuee]');
+        console.log(product_cart[idd + valuee]);
+        console.log('new koko')
+
+        update_my_cart(product_cart)
+        };
+    };
+
+function update_my_cart(product_cart){
+            console.log('prothoms')
+            console.log('prothoms')
+            console.log('prothoms')
+    var sum = 0;
+    var cart_html = ``;
+    var total_mony_for_cart_index = 0;
+	for (var item in product_cart){
+        if(product_cart[item][0] == 0){
+            console.log('s')
+            console.log('s')
+            console.log('s')
+
+            }
+        else{
+            console.log('eles s')
+            console.log('eles s')
+            console.log('eles s')
+
+
+            sum = sum + product_cart[item][0]
+            total_mony_for_cart_index = total_mony_for_cart_index + (product_cart[item][0] * product_cart[item][2])
+
+            cart_html = cart_html + `<div class="col-4" style="padding: 10px;"><img src="${product_cart[item][3]}" width="80" height="80"></div>
+                <div class="col-6" style="padding: 10px; text-align: center;">${product_cart[item][1]}<br>${product_cart[item][0]} x ${product_cart[item][2]}<br><span style="font-size: 13px;">${product_cart[item][5]}</span>  </div>
+                <div class="col-1" style="padding: 10px; text-align: center; margin-top: 30px; border: 1px solid transparent; color: #ff0303; font-size: 12px;" onclick="delete_cart('${product_cart[item][4]}', '${product_cart[item][5]}')"> X</div>
+                `;
+            }
+
+	}
+	document.getElementById('kokiojij').innerHTML = cart_html+'<div class="col-12"><hr></div><div class="col-6" style="text-align: start;">Total</div><div class="col-6" id="in_total_for_cart2">00000</div><div class="col-12"><a href="{% url 'checkout' %}" style="width: 100%;background-color: turquoise;border: 1px solid black;border-radius: 6px;margin-top: 10px;text-align: center;padding: 3px;color: black;">Checkout</a></div>';;
+    localStorage.setItem('product_cart_total', JSON.stringify(product_cart));
+    document.getElementById('show_qty_cart').innerHTML = sum;
+    document.getElementById('in_total_for_cart2').innerHTML = `$ ${total_mony_for_cart_index}`
+    console.log('sssssssssssssssssssssssssssssssss')
+    console.log(total_mony_for_cart_index)
+}
+
+
+
+
+</script>
+
+
+
+{% endblock %}

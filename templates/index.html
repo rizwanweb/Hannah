@@ -1,0 +1,685 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+<style>
+
+        #lolo{
+  background-color: #fff;
+  wwidth: 267px;
+    height: 210px;
+  border: 1px dotted black;
+  overflow-y: scroll; /* Add the ability to scroll */
+}
+
+
+
+    </style>
+
+<style>
+
+        #lolo2{
+  background-color: #fff;
+  wwidth: 267px;
+    height: 173px;
+  border: 1px dotted black;
+  overflow-y: scroll; /* Add the ability to scroll */
+}
+
+
+
+    </style>
+
+<style>
+
+        #lolo3{
+  background-color: #fff;
+  wwidth: 267px;
+    height: 230px;
+  border: 1px dotted black;
+  overflow-y: scroll; /* Add the ability to scroll */
+}
+
+
+
+    </style>
+
+<style>
+
+        #lolo4{
+  background-color: #fff;
+  wwidth: 267px;
+    height: 122px;
+  border: 1px dotted black;
+  overflow-y: scroll; /* Add the ability to scroll */
+}
+
+
+
+    </style>
+
+
+
+{% if k %}
+<style>
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+
+
+
+
+
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content" style="margin-top: 100px;">
+    <span class="close">&times;</span>
+    <div class="container-fluid bg-secondary my-5">
+        <div class="row justify-content-md-center py-5 px-xl-5">
+            <div class="col-md-6 col-12 py-5">
+                <div class="text-center mb-2 pb-2">
+                    <h2 class="section-title px-5 mb-3"><span class="bg-secondary px-2">Stay Updated</span></h2>
+                    <p>To Stay with Us, Subscribe. We will Give You Update. Thanks.</p>
+                </div>
+                <form action="{% url 'Stay_Updated_get' %}" method="POST">{% csrf_token %}
+                    <div class="input-group">
+                        <input type="text" class="form-control border-white p-4" placeholder="Type Your Mobile Number Here" name="Stay_Updated_mobile">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary px-4">Subscribe</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+<script>
+
+    document.getElementById("myBtn").click()
+</script>
+{% endif %}
+
+
+
+
+
+
+    <!-- Navbar Start part 2 -->
+
+
+    <div class="container-fluid mb-5" style="margin-top: 111px;">
+        <div class="row border-top px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block" style="margin-top: 63px;">
+                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
+                    <h6 class="m-0">Categories</h6>
+                    <i class="fa fa-angle-down text-dark"></i>
+                </a>
+                <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
+                    <div class="navbar-nav w-100 overflow-hidden" >
+<!--                        <div class="nav-item dropdown">-->
+<!--                            <a href="#" class="nav-link" data-toggle="dropdown">Skin Care Product <i class="fa fa-angle-down float-right mt-1"></i></a>-->
+<!--                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0" id="lolo">-->
+<!--                                <a href="{% url 'Face_Care' %}" class="dropdown-item">Face Care</a>-->
+<!--                                <a href="{% url 'Body_Care' %}" class="dropdown-item">Body Care</a>-->
+<!--                                <a href="{% url 'Soothing_Gel' %}" class="dropdown-item">Soothing Gel</a>-->
+<!--                                <a href="{% url 'Serum' %}" class="dropdown-item">Serum </a>-->
+<!--                                <a href="{% url 'Night_Cream_And_Day_Cream' %}" class="dropdown-item">Night Cream And Day Cream </a>-->
+<!--                                <a href="{% url 'Sunscreen' %}" class="dropdown-item">Sunscreen </a>-->
+<!--                                <a href="{% url 'Face_Pack' %}" class="dropdown-item">Face Pack </a>-->
+<!--                                <a href="{% url 'Massage_Cream' %}" class="dropdown-item">Massage Cream </a>-->
+<!--                                <a href="{% url 'Scrub' %}" class="dropdown-item">Scrub </a>-->
+<!--                                <a href="{% url 'Face_Wsah' %}" class="dropdown-item">Face Wsah </a>-->
+<!--                                <a href="{% url 'Bath_Salt' %}" class="dropdown-item">Bath Salt </a>-->
+<!--                                <a href="{% url 'Hear_Remover' %}" class="dropdown-item">Hear Remover </a>-->
+<!--                                <a href="{% url 'Foot_Cream' %}" class="dropdown-item">Foot Cream </a>-->
+<!--                                <a href="{% url 'Moisturizing_Cream' %}" class="dropdown-item">Moisturizing Cream </a>-->
+<!--                                <a href="{% url 'Toner' %}" class="dropdown-item">Toner  </a>-->
+<!--                                <a href="{% url 'Lip_Care' %}" class="dropdown-item">Lip Care </a>-->
+<!--                                <a href="{% url 'Eye_Care' %}" class="dropdown-item">Eye Care </a>-->
+<!--                                <a href="{% url 'Skin_Concern' %}" class="dropdown-item">Skin Concern </a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="nav-item dropdown">-->
+<!--                            <a href="#" class="nav-link" data-toggle="dropdown">Hear Care product <i class="fa fa-angle-down float-right mt-1"></i></a>-->
+<!--                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0" id="lolo2">-->
+<!--                                <a href="{% url 'Shampoo' %}" class="dropdown-item">Shampoo</a>-->
+<!--                                <a href="{% url 'Hear_Oil' %}" class="dropdown-item">Hear Oil</a>-->
+<!--                                <a href="{% url 'Hear_Tonic' %}" class="dropdown-item">Hear Tonic</a>-->
+<!--                                <a href="{% url 'Hear_Mask' %}" class="dropdown-item">Hear Mask</a>-->
+<!--                                <a href="{% url 'Hear_Treatment' %}" class="dropdown-item">Hear Treatment</a>-->
+<!--                                <a href="{% url 'Hear_Serum' %}" class="dropdown-item">Hear Serum</a>-->
+<!--                                <a href="{% url 'Conditioner' %}" class="dropdown-item">Conditioner</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+
+<!--                        <div class="nav-item dropdown">-->
+<!--                            <a href="#" class="nav-link" data-toggle="dropdown">Cosmetics and Makeup <i class="fa fa-angle-down float-right mt-1"></i></a>-->
+<!--                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0" id="lolo4">-->
+
+<!--                                <a href="{% url 'Face' %}" class="dropdown-item">Face</a>-->
+<!--                                <a href="{% url 'Eyes' %}" class="dropdown-item">Eyes</a>-->
+<!--                                <a href="{% url 'Lips' %}" class="dropdown-item">Lips</a>-->
+<!--                                <a href="{% url 'Nails' %}" class="dropdown-item">Nails</a>-->
+<!--                                <a href="{% url 'Brushes_and_Accessories' %}" class="dropdown-item">Brushes & Accessories</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        {% for cats in category_all %}
+                        <a href="{% url 'Category_product' cats.id %}" class="nav-item nav-link">{{ cats.Category_Name }}</a>
+                        {% endfor %}
+                        <a href="{% url 'Contact' %}" class="nav-item nav-link">Contact</a>
+<!--                        <a href="{% url 'Live_Video' %}" class="nav-item nav-link">Live Video</a>-->
+
+
+                    </div>
+                </nav>
+            </div>
+            <div class="col-lg-9" style="margin-top: 63px;">
+
+                <div id="header-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        {% if kop %}
+                        <div class="carousel-item active" style="height: 410px;">
+                            <img class="img-fluid" src="{{kop.Picture_upload.url}}" alt="Image" loading="lazy">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 700px;">
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Fashionable Dress</h3>
+                                    <a href="{% url 'Shop_Now' %}" class="btn btn-light py-2 px-3">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% if kop %}
+                        {% for i in ko %}
+                        <div class="carousel-item" style="height: 410px;">
+                            <img class="img-fluid" src="{{i.Picture_upload.url}}" alt="Image" loading="lazy">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 700px;">
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
+                                    <a href="{% url 'Shop_Now' %}" class="btn btn-light py-2 px-3">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                        {% endif %}
+                    </div>
+
+
+                    <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                            <span class="carousel-control-prev-icon mb-n2"></span>
+                        </div>
+                    </a>
+                    <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                            <span class="carousel-control-next-icon mb-n2"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Featured Start -->
+    <div class="container-fluid pt-5">
+        <div class="row px-xl-5 pb-3">
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Fast Shipping</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                    <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Featured End -->
+
+
+    <!-- All Products Start -->
+    <div class="container-fluid pt-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">All Products</span></h2>
+        </div>
+        <div class="row px-xl-5 pb-3">
+            {% if all_prod_8 %}
+            {% for i in all_prod_8 %}
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="card product-item border-0 mb-4">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="{{i.Product_Picture_upload_1.url}}" alt="" style="height: 200px;" loading="lazy">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="text-truncate mb-3">{{i.Product_Title}}</h6>
+                        <div class="d-flex justify-content-center">
+
+                                    {% if i.Product_Discount_Prize  %}
+                                        <h6>&#2547;
+                                            {{i.Product_Discount_Prize}}
+                                        </h6>
+
+                                        <h6 class="text-muted ml-2">
+                                            <del>
+                                                {% if i.Product_Sell_Prize  %}
+                                                {{i.Product_Sell_Prize}}
+                                                {% endif %}
+                                            </del>
+                                        </h6>
+                                    {% else %}
+                                        <h6 class="text-muted ml-2">
+                                            {% if i.Product_Sell_Prize  %}
+                                            {{i.Product_Sell_Prize}}
+                                            {% endif %}
+                                        </h6>
+
+                                    {% endif %}
+
+
+                        </div>
+                        <div class="d-flex justify-content-center">Size: {{i.Product_Size_Get}}</div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="{% url 'details' i.id %}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a onclick="fun('{{i.id}}','{{i.Product_Picture_upload_1.url}}','{{i.Product_Title}}','{{i.Product_Discount_Prize}}')" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <div class="col-12" style="text-align: right;"><a class="btn btn-primary py-2 px-4" href="{% url 'Shop_Now' %}" id="sendMessagseButton">See More...</a></div>
+        </div>
+    </div>
+    <!-- All Products End -->
+
+
+    <!-- Products Start -->
+    <div class="container-fluid pt-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">Trandy Products</span></h2>
+        </div>
+        <div class="row px-xl-5 pb-3">
+            {% if all_Trandy_Products %}
+            {% for i in all_Trandy_Products %}
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="card product-item border-0 mb-4">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="{{i.Product_Picture_upload_1.url}}" alt="" style="height: 200px;" loading="lazy">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="text-truncate mb-3">{{i.Product_Title}}</h6>
+                        <div class="d-flex justify-content-center">
+
+                                    {% if i.Product_Discount_Prize  %}
+                                        <h6>&#2547;
+                                            {{i.Product_Discount_Prize}}
+                                        </h6>
+
+                                        <h6 class="text-muted ml-2">
+                                            <del>
+                                                {% if i.Product_Sell_Prize  %}
+                                                {{i.Product_Sell_Prize}}
+                                                {% endif %}
+                                            </del>
+                                        </h6>
+                                    {% else %}
+                                        <h6 class="text-muted ml-2">
+                                            {% if i.Product_Sell_Prize  %}
+                                            {{i.Product_Sell_Prize}}
+                                            {% endif %}
+                                        </h6>
+
+                                    {% endif %}
+
+
+                        </div>
+                        {% if i.Product_Size_Get %}
+                        <div class="d-flex justify-content-center">Size: {{i.Product_Size_Get}}</div>
+                        {% endif %}
+
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="{% url 'details' i.id %}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a onclick="fun('{{i.id}}','{{i.Product_Picture_upload_1.url}}','{{i.Product_Title}}','{{i.Product_Discount_Prize}}')" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <div class="col-12" style="text-align: right;"><a class="btn btn-primary py-2 px-4" href="{% url 'Trandy_Products_See_More' %}">See More...</a></div>
+        </div>
+    </div>
+    <!-- Products End -->
+
+
+
+
+<!-- Products Start -->
+    <!-- Products Start -->
+    <div class="container-fluid py-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">You May Also Like</span></h2>
+        </div>
+        <div class="row px-xl-5">
+            <div class="col">
+                <div class="owl-carousel related-carousel">
+                    {% if  all_You_May_Also_Like %}
+                    {% for i in all_You_May_Also_Like %}
+                    <div class="card product-item border-0">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="img-fluid w-100" src="{{i.Product_Picture_upload_1.url}}" alt="" style="height: 200px;" loading="lazy">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="text-truncate mb-3">{{i.Product_Title}}</h6>
+                            <div class="d-flex justify-content-center">
+                                {% if i.Product_Discount_Prize  %}
+                                        <h6>&#2547;
+                                            {{i.Product_Discount_Prize}}
+                                        </h6>
+
+                                        <h6 class="text-muted ml-2">
+                                            <del>
+                                                {% if i.Product_Sell_Prize  %}
+                                                {{i.Product_Sell_Prize}}
+                                                {% endif %}
+                                            </del>
+                                        </h6>
+                                    {% else %}
+                                        <h6 class="text-muted ml-2">
+                                            {% if i.Product_Sell_Prize  %}
+                                            {{i.Product_Sell_Prize}}
+                                            {% endif %}
+                                        </h6>
+
+                                    {% endif %}
+                            </div>
+                            <div class="d-flex justify-content-center">Size: {{i.Product_Size_Get}}</div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="{% url 'details' i.id %}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a  onclick="fun('{{i.id}}','{{i.Product_Picture_upload_1.url}}','{{i.Product_Title}}','{{i.Product_Discount_Prize}}')" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+
+                </div>
+                <div class="col-12" style="text-align: right;"><a class="btn btn-primary py-2 px-4" href="{% url 'You_May_Also_Like' %}"  id="sendMessageBcutton" style="margin-top: 20px;">See More...</a></div>
+            </div>
+        </div>
+    </div>
+    <!-- Products End -->
+    <!-- Products End -->
+
+
+    <!-- Products Start -->
+    <div class="container-fluid pt-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">Just Arrived</span></h2>
+        </div>
+        <div class="row px-xl-5 pb-3">
+            {% if all_Just_Arrived %}
+            {% for i in all_Just_Arrived %}
+
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="card product-item border-0 mb-4">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="{{i.Product_Picture_upload_1.url}}" alt="" style="height: 200px;" loading="lazy">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="text-truncate mb-3">{{i.Product_Title}}</h6>
+
+                        <div class="d-flex justify-content-center">
+                            {% if i.Product_Discount_Prize  %}
+                                        <h6>&#2547;
+                                            {{i.Product_Discount_Prize}}
+                                        </h6>
+
+                                        <h6 class="text-muted ml-2">
+                                            <del>
+                                                {% if i.Product_Sell_Prize  %}
+                                                {{i.Product_Sell_Prize}}
+                                                {% endif %}
+                                            </del>
+                                        </h6>
+                                    {% else %}
+                                        <h6 class="text-muted ml-2">
+                                            {% if i.Product_Sell_Prize  %}
+                                            {{i.Product_Sell_Prize}}
+                                            {% endif %}
+                                        </h6>
+
+                                    {% endif %}
+                        </div>
+                        <div class="d-flex justify-content-center">Size: {{i.Product_Size_Get}}</div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="{% url 'details' i.id %}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a onclick="fun('{{i.id}}','{{i.Product_Picture_upload_1.url}}','{{i.Product_Title}}','{{i.Product_Discount_Prize}}')" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+            {% endif %}
+           <div class="col-12" style="text-align: right;"><a class="btn btn-primary py-2 px-4" href="{% url 'Shop_Now' %}" id="sendMessageButton">See More...</a></div>
+        </div>
+    </div>
+    <!-- Products End -->
+<div style="text-align: center;">
+<h2 class="section-title px-5"><span class="px-2">Top Brand</span></h2>
+</div>
+    <!-- Brand Start -->
+    <div class="container-fluid py-5">
+        <div class="row px-xl-5">
+            <div class="col">
+                <div class="owl-carousel vendor-carousel">
+                    {% if all_brand %}
+                    {% for i in  all_brand %}
+                    <div class="vendor-item border p-4">
+                        <a href="{% url 'brand_product' %}?brandId={{i.id}}"><img src="{{i.image.url}}" alt=""></a>
+                    </div>
+
+                    {% endfor %}
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Brand End -->
+
+
+
+
+<!-- Subscribe Start -->
+    <div class="container-fluid bg-secondary my-5">
+        <div class="row justify-content-md-center py-5 px-xl-5">
+            <div class="col-md-6 col-12 py-5">
+                <div class="text-center mb-2 pb-2">
+                    <h2 class="section-title px-5 mb-3"><span class="bg-secondary px-2">Stay Updated</span></h2>
+                    <p>To Stay with Us, Subscribe. We will Give You Update. Thanks.</p>
+                </div>
+                <form action="{% url 'Stay_Updated_get' %}" method="POST">{% csrf_token %}
+                    <div class="input-group">
+                        <input type="text" class="form-control border-white p-4" placeholder="Type Your Mobile Number Here" name="Stay_Updated_mobile">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary px-4">Subscribe</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Subscribe End -->
+
+
+<script>
+
+
+function fun(idd, imgg, titlee,  prisee){
+valuee = 'No Color'
+    if (product_cart[idd + valuee] != undefined){
+            console.log('old');
+            console.log(product_cart[idd + valuee][0]);
+            var t = product_cart[idd + valuee][0];
+            product_cart[idd + valuee][0] = t+1;
+            update_my_cart(product_cart)
+        }
+
+    else{
+        qty = 1;
+        name = titlee;
+        price = prisee;
+
+
+        product_cart[idd + valuee] = [qty, name, parseInt(price), imgg, idd, 'No Color'];
+        console.log('product_cart[idd + valuee]');
+        console.log(product_cart[idd + valuee]);
+        console.log('new koko')
+
+        update_my_cart(product_cart)
+        };
+    };
+
+function update_my_cart(product_cart){
+            console.log('prothoms')
+            console.log('prothoms')
+            console.log('prothoms')
+    var sum = 0;
+    var cart_html = ``;
+    var total_mony_for_cart_index = 0;
+	for (var item in product_cart){
+        if(product_cart[item][0] == 0){
+            console.log('s')
+            console.log('s')
+            console.log('s')
+
+            }
+        else{
+            console.log('eles s')
+            console.log('eles s')
+            console.log('eles s')
+
+
+            sum = sum + product_cart[item][0]
+            total_mony_for_cart_index = total_mony_for_cart_index + (product_cart[item][0] * product_cart[item][2])
+
+            cart_html = cart_html + `<div class="col-4" style="padding: 10px;"><img src="${product_cart[item][3]}" width="80" height="80"></div>
+                <div class="col-6" style="padding: 10px; text-align: center;">${product_cart[item][1]}<br>${product_cart[item][0]} x ${product_cart[item][2]}<br><span style="font-size: 13px;">${product_cart[item][5]}</span>  </div>
+                <div class="col-1" style="padding: 10px; text-align: center; margin-top: 30px; border: 1px solid transparent; color: #ff0303; font-size: 12px;" onclick="delete_cart('${product_cart[item][4]}', '${product_cart[item][5]}')"> X</div>
+                `;
+            }
+
+	}
+	document.getElementById('kokiojij').innerHTML = cart_html+'<div class="col-12"><hr></div><div class="col-6" style="text-align: start;">Total</div><div class="col-6" id="in_total_for_cart2">00000</div><div class="col-12"><a href="{% url 'checkout' %}" style="width: 100%;background-color: turquoise;border: 1px solid black;border-radius: 6px;margin-top: 10px;text-align: center;padding: 3px;color: black;">Checkout</a></div>';;
+    localStorage.setItem('product_cart_total', JSON.stringify(product_cart));
+    document.getElementById('show_qty_cart').innerHTML = sum;
+    document.getElementById('in_total_for_cart2').innerHTML = `&#2547; ${total_mony_for_cart_index}`
+    console.log('sssssssssssssssssssssssssssssssss')
+    console.log(total_mony_for_cart_index)
+}
+
+
+
+
+</script>
+
+
+
+
+{% endblock %}

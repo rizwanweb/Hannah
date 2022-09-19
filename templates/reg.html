@@ -1,0 +1,303 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+
+<style>
+
+         ::placeholder {
+            color: black;
+            opacity: 1;
+        }
+
+
+
+        html {
+            background: #56565b;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+
+        .container {
+            background: #3c3c42;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+            height: 465px;
+            width: 350px;
+            box-shadow: -3px -2px 6px #6c6565, 7px 9px 25px #0b0b0b;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input {
+            height: 30px;
+            border: 2px solid #e1dede69;
+            border-radius: 5px;
+            background: #777272;
+            color: black;
+            text-align: center;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .form-item-username {
+            margin: 5px;
+            display: flex;
+            padding-bottom: 10px;
+        }
+
+        .form-item-username input {
+            width: 150px;
+            margin: 0 5px;
+        }
+
+        .form-item {
+            margin: 0 auto;
+            padding-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .form-item input {
+            margin: 5px;
+            width: 100%;
+        }
+
+        .accept-box {
+            display: flex;
+            align-items: center;
+            margin: auto;
+            font-size: 15px;
+        }
+
+        a {
+            color: white;
+        }
+
+        a:hover {
+            color: grey
+        }
+
+        .form-btns {
+            display: flex;
+            flex-direction: column;
+            padding: 10px 0;
+        }
+
+        .form-btns button {
+            margin: auto;
+            font-size: 16px;
+<!--            padding: 8px;-->
+<!--            width: 280px;-->
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: rgb(75, 61, 61);
+            background: #fbba50;
+        }
+
+        .form-btns button:disabled {
+            cursor: not-allowed;
+            background: #8f8b85 !important;
+            color: rgb(131, 120, 120) !important;
+        }
+
+        .form-btns button:hover {
+            background: #d88a0c;
+            color: antiquewhite;
+        }
+
+        .options {
+            padding-top: 15px;
+            margin: auto;
+            font-size: 13px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        .pwd-format {
+            position: relative;
+            color: rgb(65, 62, 62);
+            background: rgb(243, 234, 243);
+            font-size: 11px;
+            width: 150px;
+            padding: 5px;
+            border-radius: 5px;
+            top: 112px;
+            right: -81px;
+            z-index: 2;
+            display: none;
+        }
+
+
+</style>
+
+
+<div style="margin-bottom: 80px;">welcome</div>
+
+    <div class="container">
+
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+
+          <strong>{{ message }}</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+
+
+        <h2 style="margin-top: 20px;">Sign Up</h2>
+
+        {% if erorr_message %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+
+          <strong>{{ erorr_message }}</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endif %}
+
+        <form method="POST" action="{% url 'regis' %}">{% csrf_token %}
+            <div class="form-item">
+                <input type="text" placeholder="First Name*" name="Reg_first_Name" value="{{sign_first_name}}"  required>
+            </div>
+            <div class="form-item">
+                <input type="text" placeholder="Last Name*" name="Reg_last_Name" value="{{Reg_last_Name}}" required>
+            </div>
+<div id="email_exist" ></div>
+            <div class="form-item">
+                <input type="email" placeholder="Email *" name="Reg_email" value="{{sign_last_name}}" required>
+            </div>
+
+            <div class="form-item">
+                <!-- add a password format display -->
+                <span class="pwd-format">
+                    8-15 AlphaNumeric Characters
+                </span>
+                <input type="password" placeholder="Password *" name="Reg_Password" id="id_Reg_Password" required>
+                <input type="password" placeholder="Confirm password *" name="Reg_Confirm_password" id="id_Reg_Confirm_password" required>
+            </div>
+
+
+
+            <div class="form-btns" id="">
+                <button class="signup" type="submit" style="width: 160px;">Sign Up</button>
+            </div>
+
+            <div class="form-btns">
+
+                <div class="options" style=" padding: 0px;">
+                    Already have an account? <a href="{% url 'login_func' %}">Login here</a>
+                </div>
+
+            </div>
+
+<!--            <div class="form-item">-->
+<!--                <a href="{% url 'index' %}"><img src="{% static '' %}home/logo/W.png" style="width: 145px;margin-top: 15px;"></a>-->
+<!--            </div>-->
+
+        </form>
+
+    </div>
+
+
+
+
+<script>
+    let container = document.getElementById('container')
+
+toggle = () => {
+	container.classList.toggle('sign-in')
+	container.classList.toggle('sign-up')
+}
+
+setTimeout(() => {
+	container.classList.add('sign-in')
+}, 200)
+
+</script>
+
+
+
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+function cheak_pass(){
+
+
+let x = document.getElementById('id_Reg_Password').value;
+let y = document.getElementById('id_Reg_Confirm_password').value;
+    if(x != ''){
+        if (x == y){
+            console.log('match')
+            document.getElementById('reg_button').innerHTML=`<button class="signup" style="width: 160px;" type="submit" >Sign up </button>`;
+        }
+        else{
+            console.log('Not match')
+            document.getElementById('reg_button').innerHTML=`<button class="signup" style="width: 160px;" type="submit"  disabled> Sign up</button>`;
+        }
+    }
+
+    else{
+        console.log('Not match')
+        document.getElementById('reg_button').innerHTML=`<button class="signup" style="width: 160px;" type="submit"  disabled> Sign up</button>`;
+
+    }
+
+
+
+
+}
+</script>
+
+<script>
+
+    function cheak_email(k){
+
+        jQuery.ajax({
+                        url: "{% url 'cheak_email_from_def' %}",
+                        type: "POST",
+                        data: {k:k},
+
+                    })
+                    .done(function(response){
+
+                        if (response == 'exist'){
+                        console.log('exist')
+                            document.getElementById('email_exist').innerHTML=`<p style="color: red; background-color: whitesmoke; padding: 10px;">This Mobile is Already Exists</p>`;
+                            document.getElementById('reg_button').innerHTML=`<button class="signup" type="submit" style="width: 160px;" disabled> Sign up</button>`;
+
+                        }
+                        else{
+                            console.log('not exist')
+                            document.getElementById('email_exist').innerHTML=``;
+                            document.getElementById('reg_button').innerHTML=`<button class="signup" style="width: 160px;" type="submit"> Sign up</button>`;
+                        }
+
+                    });
+    }
+
+</script>
+
+
+{% endblock %}

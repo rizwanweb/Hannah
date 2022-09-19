@@ -1,0 +1,821 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Curiosities By Hannah</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static '' %}img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static '' %}lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static '' %}css/style.css" rel="stylesheet">
+
+
+
+
+    <style>
+.dropbtn {
+
+  color: white;
+
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 6px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+/*.dropdown:hover .dropbtn {background-color: #3e8e41;}*/
+</style>
+
+
+
+    <style>
+.dropbtn2 {
+
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown2 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown2-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown2-content a {
+  color: black;
+  padding: 6px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown2-content a:hover {background-color: #D19C97;}
+.dropdown2:hover .dropdown2-content {display: block;}
+.dropdown2:hover .dropbtn2 {}
+</style>
+
+
+    <style>
+
+
+.dropbtn3 {
+
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown3 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown3-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown3-content a {
+  color: black;
+  padding: 6px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown3-content a:hover {background-color: #D19C97;}
+.dropdown3:hover .dropdown3-content {display: block;}
+.dropdown3:hover .dropbtn3 {}
+</style>
+
+
+
+
+<style>
+.dropbtn4 {
+
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown4 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown4-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown4-content a {
+  color: black;
+  padding: 6px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown4-content a:hover {background-color: #D19C97;}
+.dropdown4:hover .dropdown4-content {display: block;}
+.dropdown4:hover .dropbtn4 {}
+</style>
+
+
+<style>
+.dropbtn5 {
+
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown5 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown5-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown5-content a {
+  color: black;
+  padding: 6px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown5-content a:hover {background-color: #D19C97;}
+.dropdown5:hover .dropdown5-content {display: block;}
+.dropdown5:hover .dropbtn5 {}
+</style>
+
+
+
+
+<style type="text/css">
+    @media only screen and (min-width: 768px) {
+    #ho_crose {
+        display: none;
+
+    }
+}
+@media only screen and (min-width: 959px) {
+    #ho_crose {
+        display: none;
+    }
+}
+
+</style>
+
+
+    <style>
+
+@media only screen and (min-width: 768px) and (max-width: 1800px) {
+        #jojo{
+
+        position: relative;
+        margin-left: 81px;
+
+    }
+}
+
+
+
+
+       #koko{
+  background-color: #fff;
+    width: 267px;
+    height: 230px;
+  border: 1px dotted black;
+  overflow-y: scroll; /* Add the ability to scroll */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#koko::-webkit-scrollbar {
+    /*display: none; */
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#koko {
+  /*-ms-overflow-style: none;  */ /* IE and Edge */
+  /*scrollbar-width: none; */  /* Firefox */
+}
+
+    </style>
+
+
+
+
+<style>
+
+        #ho{
+  width: 323px;
+    height: 300px;
+    overflow-y: scroll;
+    margin-left: -180px;/* Add the ability to scroll */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#ho::-webkit-scrollbar {
+    /*display: none; */
+}
+
+
+
+    </style>
+
+
+
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid">
+        <div class="row bg-secondary py-2 px-xl-5" style="position: fixed; z-index: 3; width: 100%; margin-top: -112px;">
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="d-inline-flex align-items-center">
+<!--                    <a class="text-dark" href="">FAQs</a>-->
+<!--                    <span class="text-muted px-2">|</span>-->
+<!--                    <a class="text-dark" href="">Help</a>-->
+<!--                    <span class="text-muted px-2">|</span>-->
+<!--                    <a class="text-dark" href="">Support</a>-->
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-dark pl-2" href="">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center py-3 px-xl-5" style="position: fixed; z-index: 4; width: 100%; margin-top: -78px; background-color: #c8ccdd;">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a href="{% url 'index' %}" class="text-decoration-none">
+                    <h5 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">Curiosities</span><i style="font-size:15px;">By Hannah</i></h5>
+                </a>
+
+<!--                <a href="{% url 'index' %}" class="navbar-brand">-->
+<!--                        <img src="{% static 'img/logo_main.jpeg' %}" height="28" alt="logo_main">-->
+<!--                    </a>-->
+            </div>
+            <div class="col-lg-6 col-6 text-left">
+                <form action="{% url 'searchbar' %}">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for products" onkeyup="search_button()" id="search_element" name="searchbox" value="{{searchbox}}">
+                        <button type="submit">
+                        <div class="input-group-append">
+
+                            <span class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </span>
+
+                        </div>
+                        </button>
+
+                    </div>
+<!--                    for search show-->
+                    <div class="row" style="background-color: whitesmoke;position: absolute;width: 88%;margin-left: 1px;" id="show_search">
+
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-3 col-6 text-right">
+
+
+<!--                <a  class="btn border" >-->
+<!--                    <i class="fas fa-heart text-primary"></i>-->
+<!--                    <span class="badge">0</span>-->
+<!--                </a>-->
+
+                <div class="dropdown" >
+                  <button class="dropbtn btn border" onclick="closes('k')">
+                    <i class="fas fa-shopping-cart text-primary"></i>
+                    <span class="badge" id="show_qty_cart">0</span>
+                  </button>
+                  <div class="dropdown-content" id="ho" style="margin-left: -256px;min-width: 323px;">
+                    <span onclick="closes('closeit')" id="ho_crose" style="background-color: #c9cbc4;  margin-top: 32px;  margin-right: 3px; border-radius: 40px; padding-bottom: 4px; padding-right: 12px;  padding-left: 13px; padding-top: 1px; color: red;">x</span>
+<div class="row" id="kokiojij" style="padding: 10px;">
+
+
+</div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+<!-- Navbar Start -->
+
+
+
+
+        <div class="container-fluid mb-5" style="margin-top: 111px;" >
+            <div class="row border-top px-xl-5" style="position: fixed;z-index: 3;width: 100%;right: 15px;background-color: #b8e1d5;margin-top: -9px;">
+
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg  navbar-light py-3 py-lg-0 px-0" style="background-color: #b8e1d5;">
+                    <a href="{% url 'index' %}" class="text-decoration-none d-block d-lg-none">
+                        <h5 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">Curiosities</span><i style="font-size:15px;">By Hannah</i></h5>
+                    </a>
+
+<!--                        <a href="{% url 'index' %}" class="navbar-brand">-->
+<!--                        <img src="{% static 'img/logo_main.jpeg' %}" height="28" alt="logo_main">-->
+<!--                    </a>-->
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+
+
+
+
+
+                            <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
+
+
+<!--                            <div class="dropdown5">-->
+<!--                              <a class="dropbtn5 nav-link dropdown-toggle">Skin Care Product</a>-->
+<!--                              <div class="dropdown5-content dropdown-menu rounded-0 m-0" id="koko">-->
+<!--                                <a href="{% url 'Face_Care' %}" class="dropdown-item">Face Care</a>-->
+<!--                                <a href="{% url 'Body_Care' %}" class="dropdown-item">Body Care</a>-->
+<!--                                <a href="{% url 'Soothing_Gel' %}" class="dropdown-item">Soothing Gel</a>-->
+<!--                                <a href="{% url 'Serum' %}" class="dropdown-item">Serum </a>-->
+<!--                                <a href="{% url 'Night_Cream_And_Day_Cream' %}" class="dropdown-item">Night Cream And Day Cream </a>-->
+<!--                                <a href="{% url 'Sunscreen' %}" class="dropdown-item">Sunscreen </a>-->
+<!--                                <a href="{% url 'Face_Pack' %}" class="dropdown-item">Face Pack </a>-->
+<!--                                <a href="{% url 'Massage_Cream' %}" class="dropdown-item">Massage Cream </a>-->
+<!--                                <a href="{% url 'Scrub' %}" class="dropdown-item">Scrub </a>-->
+<!--                                <a href="{% url 'Face_Wsah' %}" class="dropdown-item">Face Wsah </a>-->
+<!--                                <a href="{% url 'Bath_Salt' %}" class="dropdown-item">Bath Salt </a>-->
+<!--                                <a href="{% url 'Hear_Remover' %}" class="dropdown-item">Hear Remover </a>-->
+<!--                                <a href="{% url 'Foot_Cream' %}" class="dropdown-item">Foot Cream </a>-->
+<!--                                <a href="{% url 'Moisturizing_Cream' %}" class="dropdown-item">Moisturizing Cream </a>-->
+<!--                                <a href="{% url 'Toner' %}" class="dropdown-item">Toner  </a>-->
+<!--                                <a href="{% url 'Lip_Care' %}" class="dropdown-item">Lip Care </a>-->
+<!--                                <a href="{% url 'Eye_Care' %}" class="dropdown-item">Eye Care </a>-->
+<!--                                <a href="{% url 'Skin_Concern' %}" class="dropdown-item">Skin Concern </a>-->
+<!--                              </div>-->
+<!--                            </div>-->
+
+
+
+
+
+
+
+
+<!--                            <div class="dropdown3" >-->
+<!--                              <a class="dropbtn3 nav-link dropdown-toggle">Hear Care product</a>-->
+<!--                              <div class="dropdown3-content dropdown-menu rounded-0 m-0">-->
+<!--                                <a href="{% url 'Shampoo' %}" class="dropdown-item">Shampoo</a>-->
+<!--                                <a href="{% url 'Hear_Oil' %}" class="dropdown-item">Hear Oil</a>-->
+<!--                                <a href="{% url 'Hear_Tonic' %}" class="dropdown-item">Hear Tonic</a>-->
+<!--                                <a href="{% url 'Hear_Mask' %}" class="dropdown-item">Hear Mask</a>-->
+<!--                                <a href="{% url 'Hear_Treatment' %}" class="dropdown-item">Hear Treatment</a>-->
+<!--                                <a href="{% url 'Hear_Serum' %}" class="dropdown-item">Hear Serum</a>-->
+<!--                                <a href="{% url 'Conditioner' %}" class="dropdown-item">Conditioner</a>-->
+<!--                              </div>-->
+<!--                            </div>-->
+
+<!--                            <div class="dropdown4" >-->
+<!--                              <a class="dropbtn4 nav-link dropdown-toggle">Cosmetics and Makeup</a>-->
+<!--                              <div class="dropdown4-content dropdown-menu rounded-0 m-0">-->
+<!--                                <a href="{% url 'Face' %}" class="dropdown-item">Face</a>-->
+<!--                                <a href="{% url 'Eyes' %}" class="dropdown-item">Eyes</a>-->
+<!--                                <a href="{% url 'Lips' %}" class="dropdown-item">Lips</a>-->
+<!--                                <a href="{% url 'Nails' %}" class="dropdown-item">Nails</a>-->
+<!--                                <a href="{% url 'Brushes_and_Accessories' %}" class="dropdown-item">Brushes & Accessories</a>-->
+<!--                              </div>-->
+<!--                            </div>-->
+
+
+
+
+<!--                            <a href="{% url 'Health_care' %}" class="nav-item nav-link">Health care</a>-->
+                            <a href="{% url 'Contact' %}" class="nav-item nav-link">Contact</a>
+<!--                            <a href="{% url 'Live_Video' %}" class="nav-item nav-link">Live Video</a>-->
+                        </div>
+                        <div class="navbar-nav ml-auto py-0">
+
+                            {% if request.user.is_authenticated %}
+                            <div class="dropdown2" style="float:right;">
+                              <a href="#" class="dropbtn2 nav-link dropdown-toggle" id="jojo">{{ request.user.first_name }}</a>
+                              <div class="dropdown2-content">
+                                <a href="{% url 'Previous_order' %}" class="dropdown-item">See My Previous order</a>
+                                <a href="{% url 'Change_Password' %}" class="dropdown-item">Change Password</a>
+                                <a href="{% url 'Log_out' %}" class="dropdown-item">Log out</a>
+                              </div>
+                            </div>
+
+
+
+
+                            
+
+                            {% else %}
+                            <a href="{% url 'login_func' %}" class="nav-item nav-link">Login</a>
+                            <a href="{% url 'reg' %}" class="nav-item nav-link">Register</a>
+
+
+                            {% endif %}
+                        </div>
+                    </div>
+                </nav>
+                </div>
+            </div>
+        </div>
+
+<!-- Navbar end -->
+
+{% block body %}
+
+{% endblock %}
+
+
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
+        <div class="row px-xl-5 pt-5">
+            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                <a href="" class="text-decoration-none">
+                    <h4 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">Curiosities</span><i style="font-size:15px;">By Hannah</i></h4>
+                </a>
+                <p>Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna ipsum dolore amet erat.</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+<!--                        <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>-->
+<!--                        <div class="d-flex flex-column justify-content-start">-->
+<!--                            <a class="text-dark mb-2" href="{% url 'index' %}"><i class="fa fa-angle-right mr-2"></i>Home</a>-->
+<!--                            <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>-->
+<!--                            <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>-->
+<!--                            <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>-->
+<!--                            <a class="text-dark mb-2" href="checkout.html"><i class="fa fa-angle-right mr-2"></i>Checkout</a>-->
+<!--                            <a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>-->
+<!--                        </div>-->
+                    </div>
+                    <div class="col-md-4 mb-5">
+<!--                        <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>-->
+<!--                        <div class="d-flex flex-column justify-content-start">-->
+<!--                            <a class="text-dark mb-2" href="{% url 'index' %}"><i class="fa fa-angle-right mr-2"></i>Home</a>-->
+<!--                            <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>-->
+<!--                            <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>-->
+<!--                            <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>-->
+<!--                            <a class="text-dark mb-2" href="checkout.html"><i class="fa fa-angle-right mr-2"></i>Checkout</a>-->
+<!--                            <a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>-->
+<!--                        </div>-->
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="font-weight-bold text-dark mb-4">Newsletter</h5>
+                        <form action="{% url 'Newsletter_get' %}" method="POST">{% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" name="Subscrib_nane" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control border-0 py-4" placeholder="Your Mobile Number" required="required" name="Subscrib_moble_number" />
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-block border-0 py-3" type="submit">Subscribe Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row border-top border-light mx-xl-5 py-4">
+            <div class="col-md-6 px-xl-0">
+                <p class="mb-md-0 text-center text-md-left text-dark">
+                    &copy; <a class="text-dark font-weight-semi-bold" href="{% url 'index' %}">curiositiesbyhannah.com</a>. All Rights Reserved.
+                </p>
+            </div>
+            <div class="col-md-6 px-xl-0 text-center text-md-right">
+<!--                <img class="img-fluid" src="{% static '' %}img/payments.png" alt="">-->
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static '' %}lib/easing/easing.min.js"></script>
+    <script src="{% static '' %}lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="{% static '' %}mail/jqBootstrapValidation.min.js"></script>
+    <script src="{% static '' %}mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static '' %}js/main.js"></script>
+
+
+
+
+
+
+<script>
+    function closes(k){
+        console.log('heeoo')
+
+    var t = document.getElementById('ho').style.display
+
+    if (k == 'closeit'){
+document.getElementById('ho').style.display = "none";
+
+    }
+    if(t == 'none'){
+document.getElementById('ho').style.display = "block";
+    }
+
+
+
+
+//document.getElementById('ho').style.display = "none";
+
+      console.log('heeoo')
+    }
+
+
+</script>
+
+
+<!--this is for cart-->
+<script>
+
+if (localStorage.getItem('product_cart_total')==null){
+	var product_cart={};
+	console.log('none')
+	}
+else{
+	product_cart = JSON.parse(localStorage.getItem('product_cart_total'));
+	console.log(product_cart)
+	}
+
+    var sum = 0;
+    var total_mony_for_cart = 0;
+    var cart_html = ``;
+
+
+	for (var item in product_cart){
+        if(product_cart[item][0] == 0){
+        console.log('s')
+        }
+        else{
+
+            sum = sum + product_cart[item][0]
+            total_mony_for_cart = total_mony_for_cart + (product_cart[item][0] * product_cart[item][2])
+
+                cart_html = cart_html + `
+
+                <div class="col-4" style="padding: 10px;"><img src="${product_cart[item][3]}" width="80" height="80"></div>
+                <div class="col-6" style="padding: 10px; text-align: center;"><span style="font-size: 13px;">${product_cart[item][1]}</span><br><span style="font-size: 13px;">${product_cart[item][0]} x ${product_cart[item][2]}<br><span style="font-size: 13px;">${product_cart[item][5]}</span>   </div>
+                <div class="col-1" style="padding: 10px; text-align: center; margin-top: 30px; border: 1px solid transparent; color: #ff0303; font-size: 12px;" onclick="delete_cart('${product_cart[item][4]}', '${product_cart[item][5]}')"> X</div>
+
+
+                `;
+        }
+
+
+
+
+	}
+    document.getElementById('show_qty_cart').innerHTML = sum;
+    document.getElementById('kokiojij').innerHTML = cart_html+'<div class="col-12"><hr></div><div class="col-6" style="text-align: start;">Total</div><div class="col-6" id="in_total_for_cart">00000</div><div class="col-12"><a href="{% url 'checkout' %}" style="width: 100%;background-color: turquoise;border: 1px solid black;border-radius: 6px;margin-top: 10px;text-align: center;padding: 3px;color: black;">Checkout</a></div>';
+    document.getElementById('in_total_for_cart').innerHTML = `$ ${total_mony_for_cart}`
+
+
+
+
+
+
+
+
+</script>
+
+
+
+<script>
+    function delete_cart(id_get_here, color_get){
+console.log('id_get_here + color_get')
+console.log(id_get_here + color_get)
+console.log('id_get_here + color_get')
+    product_cart[id_get_here + color_get][0] = 0;
+
+    update_my_cart(product_cart)
+
+    }
+
+
+</script>
+
+
+
+
+<script>
+
+
+function update_my_cart(product_cart){
+    var sum = 0;
+    var total_mony_for_cart_index = 0;
+    var cart_html = ``;
+	for (var item in product_cart){
+        if(product_cart[item][0] == 0){
+            console.log('s')
+            }
+        else{
+            sum = sum + product_cart[item][0]
+            total_mony_for_cart_index = total_mony_for_cart_index + (product_cart[item][0] * product_cart[item][2])
+
+            cart_html = cart_html + `<div class="col-4" style="padding: 10px;"><img src="${product_cart[item][3]}" width="80" height="80"></div>
+                <div class="col-6" style="padding: 10px; text-align: center;"><span style="font-size: 13px;">${product_cart[item][1]}</span><br><span style="font-size: 13px;">${product_cart[item][0]} x ${product_cart[item][2]}</span><br><span style="font-size: 13px;">${product_cart[item][5]}</span></div>
+                <div class="col-1" style="padding: 10px; text-align: center; margin-top: 30px; border: 1px solid transparent; color: #ff0303; font-size: 12px;" onclick="delete_cart('${product_cart[item][4]}', '${product_cart[item][5]}')">X</div>`;
+            }
+
+	}
+	document.getElementById('kokiojij').innerHTML = cart_html+'<div class="col-12"><hr></div><div class="col-6" style="text-align: start;">Total</div><div class="col-6" id="in_total_for_cart2">00000</div><div class="col-12"><a href="{% url 'checkout' %}" style="width: 100%;background-color: turquoise;border: 1px solid black;border-radius: 6px;margin-top: 10px;text-align: center;padding: 3px;color: black;">Checkout</a></div>';
+    localStorage.setItem('product_cart_total', JSON.stringify(product_cart));
+    document.getElementById('show_qty_cart').innerHTML = sum;
+    document.getElementById('in_total_for_cart2').innerHTML = `$ ${total_mony_for_cart_index}`s
+}
+
+
+
+
+</script>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script>
+    function search_button(){
+
+    var popo = document.getElementById('search_element').value
+
+
+    $.ajax({
+                        url: "{% url 'search_button_def' %}",
+                        type: "POST",
+                        data: {popo:popo},
+
+                    })
+                    .done(function(response){
+
+                        var prod = JSON.parse(response);
+                        console.log(prod)
+                        console.log('prod')
+
+                        var len = prod.length;
+                        console.log('len')
+                        console.log(len)
+
+                        let product_list = [];
+                        search_result = ``
+
+                        for(var i=0;i<len;i++){
+
+                                    console.log('prod[i]')
+                                    console.log(prod[i].fields.Product_Title)
+                                    console.log(prod[i].pk)
+
+                                    search_result = search_result + `
+                                    <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12" style="padding: 10px;border: 1px solid green;margin: 20px;">
+                                        <a href="/details/${prod[i].pk}"><img src="/media/${prod[i].fields.Product_Picture_upload_1}" style="width: 40px; height: 40px;">
+                                        ${prod[i].fields.Product_Title}</a>
+                                    </div>
+
+                                    `
+
+
+                                            }
+
+
+                                    document.getElementById('show_search').innerHTML = search_result;
+
+
+                    });
+
+
+
+    }
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

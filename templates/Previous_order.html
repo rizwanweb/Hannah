@@ -1,0 +1,379 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+
+<div>Previous order</div>
+
+<div class="container-fluid pt-5">
+        <div class="row px-xl-5">
+
+            <div class="col-lg-4">
+
+                <div class="card border-secondary mb-5">
+                    <div class="card-header bg-secondary border-0">
+                        <h4 class="font-weight-semi-bold m-0">Order Number <br><span style="font-size: 10px;">(Click on order no. to see details)</span></h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3 pt-1">
+                            <h6 class="font-weight-medium">Order ID</h6>
+                            <h6 class="font-weight-medium">Purchase Time</h6>
+                        </div>
+
+                        {% if all_order %}
+                        {% for i in all_order %}
+                        <div class="d-flex justify-content-between">
+                            <a href="{% url 'order_No_show' i.id %}"><h6 class="font-weight-medium">{{i.order_No}}</h6></a>
+                            <h6 class="font-weight-medium">{{i.perchase_date}}</h6>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        No Order Yet
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-8 table-responsive mb-5">
+                <div class="card-header bg-secondary border-0">
+                        <h4 class="font-weight-semi-bold m-0">Order Details {% if all_order_last %}({{all_order_last.order_No}}){% else %}{% endif %}</h4>
+                    </div>
+                <table class="table table-bordered text-center mb-0">
+                    <thead class="bg-secondary text-dark">
+                        <tr>
+                            <th>Products</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+
+                        </tr>
+                    </thead>
+                    <tbody class="align-middle">
+                    {% if all_order_last %}
+
+                        {% if all_order_last.Name_of_product_1 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_1}}</td>
+                            <td class="align-middle">{{all_order_last.product_1_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_1_quantity}}</td>
+                        </tr>
+                        {% endif %}
+
+
+
+                        {% if all_order_last.Name_of_product_2 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_2}}</td>
+                            <td class="align-middle">{{all_order_last.product_2_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_2_quantity}}</td>
+                        </tr>
+                        {% endif %}
+
+
+
+                        {% if all_order_last.Name_of_product_3 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_3}}</td>
+                            <td class="align-middle">{{all_order_last.product_3_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_3_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_4 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_4}}</td>
+                            <td class="align-middle">{{all_order_last.product_4_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_4_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_5 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_5}}</td>
+                            <td class="align-middle">{{all_order_last.product_5_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_5_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_6 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_6}}</td>
+                            <td class="align-middle">{{all_order_last.product_6_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_6_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_7 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_7}}</td>
+                            <td class="align-middle">{{all_order_last.product_7_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_7_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_8 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_8}}</td>
+                            <td class="align-middle">{{all_order_last.product_8_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_8_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_9 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_9}}</td>
+                            <td class="align-middle">{{all_order_last.product_9_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_9_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_10 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_10}}</td>
+                            <td class="align-middle">{{all_order_last.product_10_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_10_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_11 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_11}}</td>
+                            <td class="align-middle">{{all_order_last.product_11_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_11_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_12 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_12}}</td>
+                            <td class="align-middle">{{all_order_last.product_12_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_12_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_13 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_13}}</td>
+                            <td class="align-middle">{{all_order_last.product_13_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_13_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+{% if all_order_last.Name_of_product_14 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_14}}</td>
+                            <td class="align-middle">{{all_order_last.product_14_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_14_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_15 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_15}}</td>
+                            <td class="align-middle">{{all_order_last.product_15_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_15_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+{% if all_order_last.Name_of_product_16 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_16}}</td>
+                            <td class="align-middle">{{all_order_last.product_16_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_16_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_17 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_17}}</td>
+                            <td class="align-middle">{{all_order_last.product_17_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_17_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_18 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_18}}</td>
+                            <td class="align-middle">{{all_order_last.product_18_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_18_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+{% if all_order_last.Name_of_product_19 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_19}}</td>
+                            <td class="align-middle">{{all_order_last.product_19_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_19_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_20 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_20}}</td>
+                            <td class="align-middle">{{all_order_last.product_20_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_20_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_21 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_21}}</td>
+                            <td class="align-middle">{{all_order_last.product_21_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_21_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_22 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_22}}</td>
+                            <td class="align-middle">{{all_order_last.product_22_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_22_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_23 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_23}}</td>
+                            <td class="align-middle">{{all_order_last.product_23_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_23_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_24 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_24}}</td>
+                            <td class="align-middle">{{all_order_last.product_24_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_24_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_25 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_25}}</td>
+                            <td class="align-middle">{{all_order_last.product_25_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_25_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+{% if all_order_last.Name_of_product_26 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_26}}</td>
+                            <td class="align-middle">{{all_order_last.product_26_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_26_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+{% if all_order_last.Name_of_product_27 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_27}}</td>
+                            <td class="align-middle">{{all_order_last.product_27_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_27_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+{% if all_order_last.Name_of_product_28 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_28}}</td>
+                            <td class="align-middle">{{all_order_last.product_28_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_28_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+{% if all_order_last.Name_of_product_29 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_29}}</td>
+                            <td class="align-middle">{{all_order_last.product_29_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_29_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+{% if all_order_last.Name_of_product_30 %}
+                        <tr>
+                            <td class="align-middle">{{all_order_last.Name_of_product_30}}</td>
+                            <td class="align-middle">{{all_order_last.product_30_Price}}</td>
+                            <td class="align-middle">{{all_order_last.product_30_quantity}}</td>
+
+
+                        </tr>
+  {% endif %}
+
+
+
+
+
+
+
+
+
+
+                        <tr>
+                            <td class="align-middle">Shipping Charge = {{all_order_last.order_User_shipping_charge}}</td>
+                            <td class="align-middle">Sub Total = {{all_order_last.order_User_Sub_total}}</td>
+                            <td class="align-middle">Total = {{all_order_last.order_User_total}}</td>
+                        </tr>
+
+                    {% else %}
+                    <tr>
+                        <td class="align-middle" colspan="3">No Order</td>
+                    </tr>
+                    {% endif %}
+
+
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+
+{% endblock %}
